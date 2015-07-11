@@ -1,6 +1,11 @@
 <template name="layout">
-  <h1>Welcome to Lob!</h1>
-  {{> noteList}}
-  {{> addNote}}
-  {{> yield}}
+  <div class="ui celled grid">
+    <div class="three wide column">
+      {{> addNote}}
+      {{> noteList}}
+    </div>
+    <div class="thirteen wide column">
+      {{> yield}}
+    </div>
+  </div>
 </template>

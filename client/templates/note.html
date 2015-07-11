@@ -1,3 +1,8 @@
 <template name="note">
-  {{content}}
+  <div class="ui transparent input">
+    <input class="title" noteid="{{_id}}" value="{{name}}">
+  </div>
+  <div>
+    {{content}}
+  </div>
 </template>
