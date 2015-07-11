@@ -9,7 +9,6 @@
 
 Template.note.events({
   'change .title': function(event,context) {
-    console.log(this._id)
-    Notes.update(this._id, {$set:{name:event.target.value}});
+    Notes.update({_id:event.target.attributes.noteid}, {$set:{name:event.target.value}});
   }
 });
