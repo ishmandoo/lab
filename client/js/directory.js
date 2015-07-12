@@ -1,6 +1,5 @@
 Template.directory.helpers({
   directories:function(ids){
-    console.log(Directories.find({_id: {$in: ids}}).fetch())
     return Directories.find({_id: {$in: ids}}).fetch()
   },
   files:function(ids){
@@ -18,28 +17,35 @@ Template.directory.events({
     content:'new note',
     createdAt:new Date()},
     function (err, id) {
-      var newFileList = dir.fileList.push(id);
-      Directories.update(dir.id,{$set: {fileList:newFileList}})
+      var newFileList = dir.fileList;
+      newFileList.push(id);
+      Directories.update(dir._id,{$set: {fileList:newFileList}})
     });
   },
   "click #newDir": function() {
     var dir = this;
-    Notes.insert(
+    Directories.insert(
     {name:'directory',
     fileList: [],
     dirList: []},
     function (err, id) {
-      var newDirList = dir.dirList.push(id);
-      Directories.update(dir.id,{$set: {dirList:newDirList}})
+      var newDirList = dir.dirList;
+      newDirList.push(id);
+      Directories.update(dir._id,{$set: {dirList:newDirList}})
     });
   }
 });
 
-Template.directory.rendered=function(){
-  this.$('.ui.accordion').accordion({
-    selector: {
-      trigger: "#menuIcon"
-    }
-  })
+
+Template.directory.rendered = function(){
+  console.log(this)
+  this.$('.ui.accordion').first().accordion({
+    duration:0,
+    closenested:false
+  });
+  //  selector: {
+  //    trigger: ".menuIcon"
+  //  }
+  //})
   this.$('.ui.dropdown').dropdown()
-}
+};
