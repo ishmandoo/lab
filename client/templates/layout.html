@@ -1,7 +1,9 @@
 <template name="layout">
   <div class="ui celled grid">
     <div class="four wide column">
-      {{> noteList}}
+      {{#each directories}}
+        {{> directory}}
+      {{/each}}
     </div>
     <div class="twelve wide column">
       {{> yield}}
