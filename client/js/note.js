@@ -44,11 +44,24 @@ Template.note.onRendered(function(){
 
       //End Latex Hack
 
+
       Notes.update(Session.get('note'),{$set: {content: content}});
 
     },
+    onBlur: function(e) {
+
+      console.log('Editable area loses focus');
+      var myNote = Notes.findOne({_id: Session.get('note')});
+      console.log(myNote)
+      var editor = $('#summernote');
+      editor.code(myNote.content);
+
+    },
+
     height: 500
   });
+
+
   editor.code(this.content)
 
 
