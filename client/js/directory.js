@@ -7,8 +7,10 @@ Template.directory.helpers({
   }
 });
 
-Meteor.methods({
-  newFile: function(id){
+
+
+Template.directory.events({
+  "click #newFile": function() {
     Notes.insert(
     {name:'untitled note',
     content:'new note',
@@ -18,7 +20,7 @@ Meteor.methods({
       Template.update(id,{$set: {fileList:newFileList}})
     });
   },
-  newDirectory: function(id){
+  "click #newDir": function() {
     Notes.insert(
     {name:'directory',
     fileList: [],
@@ -30,16 +32,7 @@ Meteor.methods({
   }
 });
 
-Template.directory.events({
-  "click #newFile": function() {
-    Meteor.call('newFile', this._id);
-  },
-  "click #newDir": function() {
-    Meteor.call('newDir', this._id);
-  }
-});
-
-Template.noteList.rendered=function(){
+Template.directory.rendered=function(){
   this.$('.ui.accordion').accordion({
     selector: {
       trigger: "#menuIcon"
