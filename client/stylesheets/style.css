@@ -35,6 +35,14 @@ html,body { height: 100%; margin: 0px; padding: 0px; }
   position: relative;
 }
 
+a{
+  color:#6821D0 !important;
+}
+
+.ui.purple.buttons .button, .ui.purple.button {
+  background-color:#6821D0 !important;
+}
+
 #nav{
   background-color:#EFEFEF;
 }
