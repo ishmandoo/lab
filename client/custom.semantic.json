@@ -1,6 +1,6 @@
 {
   "definitions": {
-    "accordion": false,
+    "accordion": true,
     "ad": true,
     "api": true,
     "breadcrumb": true,
