@@ -2,3 +2,35 @@
 .ui {
   margin-top: 0px !important;
 }
+
+#logo{
+  width:100%;
+}
+
+.content {
+  width: 100% !important;
+}
+
+html,body { height: 100%; margin: 0px; padding: 0px; }
+
+.full {
+  height: 100% !important;
+  margin: 0px !important;
+  padding: 0px;
+}
+
+#summernote, .note-editor{
+  height: 100% !important;
+  margin:-1em !important;
+  border: 0px;
+}
+
+.marker {
+  position: absolute;
+  right:-29px;
+  top:5px;
+}
+
+.item{
+  position: relative;
+}

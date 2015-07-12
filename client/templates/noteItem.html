@@ -2,8 +2,11 @@
   <div class="item">
     <i class="large file text middle aligned icon"></i>
     <div class="content">
-      <a href="/notes/{{_id}}">{{name}}</a><i class=delete><i class="remove circle icon right floated red"></i></i>
-      <div class="description">Date Created:{{formattedDate createdAt}}</div>
+      <a href="/notes/{{_id}}">{{name}}</a>
+      <div class="description">Date Created:{{formattedDate createdAt}}<i class=delete><i class="remove circle icon right floated red"></i></i></div>
     </div>
+    {{#if isActive}}
+      <i class="big left triangle icon floated marker"></i>
+    {{/if}}
   </div>
 </template>

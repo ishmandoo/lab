@@ -1,9 +1,11 @@
 <template name="layout">
-  <div class="ui celled grid">
-    <div class="four wide column">
+  <div class="ui celled grid full">
+    <div class="three wide column">
+      <img id="logo" src="/logo.png">
+      <div class="ui divider"></div>
       {{> noteList}}
     </div>
-    <div class="twelve wide column">
+    <div class="thirteen wide column">
       {{> yield}}
     </div>
   </div>
