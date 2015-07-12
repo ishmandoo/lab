@@ -4,6 +4,10 @@ Template.noteList.helpers({
   }
 });
 Template.noteList.rendered=function(){
-  var self=this;
-  self.$('.ui.accordion').accordion()
+  this.$('.ui.accordion').accordion({
+    selector: {
+      trigger: "#menuIcon"
+    }
+  })
+  this.$('.ui.dropdown').dropdown()
 }

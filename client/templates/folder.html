@@ -1,22 +1,3 @@
 <template name="folder">
-  <div id="Accordion" class="ui styled fluid accordion">
-    <div class="title">
-      <i class="dropdown icon"></i>
-      Root
-    </div>
-
-    <div class="content">
-      <p class="transition hidden">
-        {{>addNote}} {{>addFolder}}
-      </p>
-      <p class="transition hidden">
-        <div class="ui relaxed divided list">
-          {{#each notes}}
-            {{> noteItem}}
-          {{/each}}
-        </div>
-      </p>
-    </div>
-  </div>
 
 </template>
