@@ -9,6 +9,9 @@ Template.noteItem.helpers({
 
 Template.noteItem.events({
   'click .delete':function(){
+    if (this._id = Session.get('note')){
+      Router.go('/');
+    }
     Notes.remove(this._id)
   }
 });
