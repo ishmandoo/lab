@@ -1,14 +1,19 @@
 <template name="noteList">
-  <div id="Accordion" class="ui styled fluid accordion">
-    <div class="title">
-      <i class="dropdown icon"></i>
-      Root
-    </div>
 
+  <div class="ui accordion">
+    <div class="title">
+      <i id="menuIcon" class="dropdown icon"></i>Root
+
+      <div class="ui dropdown">
+        <i class="sidebar icon"></i>
+        <div class="menu">
+          <div class="item">New file</div>
+          <div class="item">New folder</div>
+        </div>
+      </div>
+
+    </div>
     <div class="content">
-      <p class="transition hidden">
-        {{>addNote}} {{>addFolder}}
-      </p>
       <p class="transition hidden">
         <div class="ui relaxed divided list">
           {{#each notes}}
