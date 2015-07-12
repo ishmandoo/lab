@@ -1,10 +1,10 @@
-Template.noteItem.helpers({
+Template.file.helpers({
   formattedDate:function(createdAt){
     return createdAt.toLocaleDateString()
   }
 });
 
-Template.noteItem.events({
+Template.file.events({
   'click .delete':function(){
     Notes.remove(this._id)
   }
