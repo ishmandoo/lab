@@ -36,16 +36,29 @@ Template.directory.events({
   }
 });
 
+function keepClosed(){
+  $('.ui.accordion').first().accordion({
+    collapsible:false
 
-Template.directory.rendered = function(){
-  console.log(this)
-  this.$('.ui.accordion').first().accordion({
-    duration:0,
-    closenested:false
+  });
+}
+
+function allowClose(){
+  $('.ui.accordion').first().accordion({
+    collapsible:true
+  });
+}
+
+Template.directory.onRendered(function(){
+  this.$('.ui.accordion.1').accordion({
+    onOpen: allowClose,
+    onOpening: keepClosed,
+    exclusive: false
+
   });
   //  selector: {
   //    trigger: ".menuIcon"
   //  }
   //})
-  this.$('.ui.dropdown').dropdown()
-};
+  this.$('.ui.dropdown.'+this.data._id).dropdown()
+});
